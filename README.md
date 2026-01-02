@@ -6,6 +6,12 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Cost](https://img.shields.io/badge/cost-$0-brightgreen)
 
+## 🌐 Live Demo
+
+**👉 [Try it now: decision-minutes-copilot.onrender.com](https://decision-minutes-copilot.onrender.com)**
+
+*Note: Free tier may take ~30s to wake up on first visit*
+
 ## 📸 Screenshots
 
 ### Upload Screen
