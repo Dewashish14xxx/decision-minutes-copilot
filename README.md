@@ -6,6 +6,20 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Cost](https://img.shields.io/badge/cost-$0-brightgreen)
 
+## 📸 Screenshots
+
+### Upload Screen
+![Upload](assets/screenshots/01-upload.png)
+
+### Processing with Whisper AI
+![Processing](assets/screenshots/02-processing.png)
+
+### AI-Generated Meeting Minutes
+![Results](assets/screenshots/03-results.png)
+
+### Action Items with Confidence Scores
+![Actions](assets/screenshots/04-actions.png)
+
 ## 🚀 Features
 
 | Feature | Technology | Cost |
