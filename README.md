@@ -6,24 +6,6 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Cost](https://img.shields.io/badge/cost-$0-brightgreen)
 
-## 🎬 Demo
-
-![Demo Video](assets/demo-video.webp)
-
-## 📸 Screenshots
-
-### Upload Interface
-![Upload Screen](assets/screenshots/01-upload-screen.png)
-
-### Powered by Groq (FREE AI)
-![Groq Powered](assets/screenshots/02-groq-powered.png)
-
-### AI-Extracted Results
-![Results Summary](assets/screenshots/03-results-summary.png)
-
-### Action Items with Confidence Scores
-![Action Items](assets/screenshots/04-action-items.png)
-
 ## 🚀 Features
 
 | Feature | Technology | Cost |
