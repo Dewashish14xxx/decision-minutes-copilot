@@ -1,0 +1,88 @@
+{
+    "test_cases": [
+        {
+            "id": "tc001",
+            "name": "Simple action item extraction",
+            "transcript": "John says: I'll send the report by Friday. Mary responds: Great, I'll review it over the weekend and provide feedback by Monday.",
+            "expected": {
+                "action_items": [
+                    {
+                        "description": "Send the report",
+                        "owner": "John",
+                        "deadline": "Friday"
+                    },
+                    {
+                        "description": "Review the report and provide feedback",
+                        "owner": "Mary",
+                        "deadline": "Monday"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "tc002",
+            "name": "Decision extraction",
+            "transcript": "After much discussion, the team decided to use React for the frontend and Python for the backend. We agreed to start development next Monday.",
+            "expected": {
+                "decisions": [
+                    {
+                        "description": "Use React for frontend"
+                    },
+                    {
+                        "description": "Use Python for backend"
+                    },
+                    {
+                        "description": "Start development next Monday"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "tc003",
+            "name": "Mixed content",
+            "transcript": "CEO: We're launching the new product on March 15th. Marketing team will prepare the press release. Sales needs to update the pricing on the website. We decided the initial price will be $99.",
+            "expected": {
+                "decisions": [
+                    {
+                        "description": "Launch date is March 15th"
+                    },
+                    {
+                        "description": "Initial price will be $99"
+                    }
+                ],
+                "action_items": [
+                    {
+                        "description": "Prepare press release",
+                        "owner": "Marketing team"
+                    },
+                    {
+                        "description": "Update pricing on website",
+                        "owner": "Sales"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "tc004",
+            "name": "No clear action items",
+            "transcript": "The weather today is quite nice. We had a casual chat about the weekend plans.",
+            "expected": {
+                "action_items": [],
+                "decisions": []
+            }
+        },
+        {
+            "id": "tc005",
+            "name": "Implicit action items",
+            "transcript": "Someone should really look into the performance issues we've been having. Also, it would be good if we could get better coffee for the office.",
+            "expected": {
+                "action_items": [
+                    {
+                        "description": "Look into performance issues",
+                        "confidence_max": 0.7
+                    }
+                ]
+            }
+        }
+    ]
+}

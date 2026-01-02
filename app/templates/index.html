@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision-Minutes Copilot</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🎙️</span>
+                <h1>Decision-Minutes Copilot</h1>
+            </div>
+            <p class="tagline">Convert meetings into actionable minutes with AI</p>
+        </header>
+
+        <!-- Groq Mode Banner -->
+        <div class="demo-banner groq-mode" id="demo-banner">
+            <span class="demo-icon">⚡</span>
+            <div class="demo-text">
+                <strong>POWERED BY GROQ</strong> - Free AI transcription & extraction active!
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section id="upload-section" class="card upload-zone">
+                <div class="upload-content" id="drop-zone">
+                    <div class="upload-icon">📁</div>
+                    <h2>Upload Meeting Recording</h2>
+                    <p>Drag & drop your audio file here, or click to browse</p>
+                    <p class="file-types">Supported: MP3, WAV, M4A, WebM, OGG, FLAC (max 25MB)</p>
+                    <input type="file" id="file-input" accept=".mp3,.wav,.m4a,.webm,.ogg,.flac" hidden>
+                    <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">
+                        Choose File
+                    </button>
+                </div>
+                <div id="file-info" class="file-info hidden">
+                    <span class="file-name"></span>
+                    <button class="btn btn-small btn-secondary" onclick="clearFile()">✕</button>
+                </div>
+            </section>
+
+            <!-- Processing Section -->
+            <section id="processing-section" class="card hidden">
+                <div class="processing-content">
+                    <div class="spinner"></div>
+                    <h2 id="processing-status">Processing...</h2>
+                    <p id="processing-message">Uploading your audio file</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="card hidden">
+                <div class="results-header">
+                    <h2>📋 Meeting Minutes</h2>
+                    <div class="results-actions">
+                        <button class="btn btn-small btn-secondary" onclick="exportMarkdown()">
+                            📄 Export Markdown
+                        </button>
+                        <button class="btn btn-small btn-secondary" onclick="copyToClipboard()">
+                            📋 Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="results-block">
+                    <h3>Summary</h3>
+                    <p id="meeting-summary" class="summary-text"></p>
+                </div>
+
+                <!-- Decisions -->
+                <div class="results-block" id="decisions-block">
+                    <h3>Decisions</h3>
+                    <ul id="decisions-list" class="decisions-list"></ul>
+                </div>
+
+                <!-- Action Items -->
+                <div class="results-block">
+                    <h3>Action Items</h3>
+                    <div class="action-items-container">
+                        <table class="action-table" id="action-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Action</th>
+                                    <th>Owner</th>
+                                    <th>Deadline</th>
+                                    <th>Confidence</th>
+                                </tr>
+                            </thead>
+                            <tbody id="action-items-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Transcript Toggle -->
+                <div class="results-block">
+                    <button class="btn btn-small btn-ghost" onclick="toggleTranscript()">
+                        <span id="transcript-toggle-icon">▶</span> Show Full Transcript
+                    </button>
+                    <div id="transcript-content" class="transcript-content hidden">
+                        <p id="transcript-text"></p>
+                    </div>
+                </div>
+
+                <!-- Confirmation -->
+                <div class="confirmation-section">
+                    <button class="btn btn-primary btn-large" id="confirm-btn" onclick="confirmResults()">
+                        ✓ Confirm & Save
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="resetApp()">
+                        ↺ Process Another
+                    </button>
+                </div>
+            </section>
+
+            <!-- Confirmed Section -->
+            <section id="confirmed-section" class="card hidden">
+                <div class="confirmed-content">
+                    <div class="success-icon">✓</div>
+                    <h2>Minutes Confirmed!</h2>
+                    <p>Your meeting minutes have been saved.</p>
+                    <button class="btn btn-primary" onclick="resetApp()">Process Another Meeting</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with 🤖 Whisper + GPT-4 | Decision-Minutes Copilot</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
