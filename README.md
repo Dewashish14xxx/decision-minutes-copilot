@@ -1,31 +1,54 @@
 # Decision-Minutes Copilot
 
-🎙️ **Convert meeting recordings into actionable minutes with AI**
+🎙️ **Convert meeting recordings into actionable minutes with AI - 100% FREE**
 
 ![Status](https://img.shields.io/badge/status-active-success)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
+![Cost](https://img.shields.io/badge/cost-$0-brightgreen)
+
+## 🎬 Demo
+
+![Demo Video](assets/demo-video.webp)
+
+## 📸 Screenshots
+
+### Upload Interface
+![Upload Screen](assets/screenshots/01-upload-screen.png)
+
+### Powered by Groq (FREE AI)
+![Groq Powered](assets/screenshots/02-groq-powered.png)
+
+### AI-Extracted Results
+![Results Summary](assets/screenshots/03-results-summary.png)
+
+### Action Items with Confidence Scores
+![Action Items](assets/screenshots/04-action-items.png)
 
 ## 🚀 Features
 
-- **Audio Upload**: Drag-and-drop support for MP3, WAV, M4A, WebM
-- **AI Transcription**: OpenAI Whisper for accurate speech-to-text
-- **Smart Extraction**: GPT-4 extracts action items, owners & deadlines
-- **Confidence Scores**: Visual indicators for extraction confidence
-- **Human Confirmation**: Edit and approve before finalizing
+| Feature | Technology | Cost |
+|---------|------------|------|
+| Audio Upload | Drag & Drop | Free |
+| Speech-to-Text | Groq Whisper | **FREE** |
+| Action Extraction | Groq LLaMA 3.3 70B | **FREE** |
+| Confidence Scoring | AI-generated | Free |
+| Human Confirmation | Built-in | Free |
+| Export to Markdown | Built-in | Free |
 
 ## 📊 Performance
 
 | Metric | Value |
 |--------|-------|
-| Transcription Accuracy | ~95% (Whisper large-v3) |
-| Extraction Accuracy | TBD after eval |
-| Avg Processing Time | TBD |
-| Cost per Request | ~$0.05-0.10 |
+| Transcription Model | Whisper Large v3 |
+| Extraction Model | LLaMA 3.3 70B |
+| Processing Speed | ~10x faster (Groq) |
+| Cost per Request | **$0.00** |
 
 ## 🛠️ Setup
 
 ```bash
-# Clone and enter directory
+# Clone the repo
+git clone https://github.com/Dewashish14xxx/decision-minutes-copilot.git
 cd decision-minutes-copilot
 
 # Create virtual environment
@@ -35,13 +58,15 @@ venv\Scripts\activate  # Windows
 # Install dependencies
 pip install -r requirements.txt
 
-# Set up environment
+# Set up environment (get FREE key from console.groq.com)
 copy .env.example .env
-# Add your OPENAI_API_KEY to .env
+# Add your GROQ_API_KEY to .env
 
 # Run the app
 python -m app.main
 ```
+
+Open http://localhost:5000 and upload a meeting recording!
 
 ## 📁 Project Structure
 
@@ -50,16 +75,23 @@ decision-minutes-copilot/
 ├── app/
 │   ├── main.py          # Flask entry point
 │   ├── routes.py        # API endpoints
-│   └── services/        # ASR & LLM services
+│   └── services/
+│       ├── transcription.py  # Groq Whisper
+│       └── extraction.py     # Groq LLaMA
 ├── static/              # CSS & JS
+├── assets/              # Screenshots & demo
 ├── evals/               # Test cases
-└── uploads/             # Temporary audio storage
+└── uploads/             # Temporary storage
 ```
 
-## 🎬 Demo
+## 🔑 Get Your FREE API Key
 
-[90-second walkthrough video coming soon]
+1. Go to https://console.groq.com
+2. Sign up (no credit card required)
+3. Create an API key
+4. Add to `.env` file
 
 ## 📝 License
 
 MIT
+
