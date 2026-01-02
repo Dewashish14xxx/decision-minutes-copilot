@@ -1,52 +1,26 @@
 # Decision-Minutes Copilot
 
-🎙️ **Convert meeting recordings into actionable minutes with AI - 100% FREE**
+An AI-powered tool that converts meeting recordings into actionable minutes.
 
-![Status](https://img.shields.io/badge/status-active-success)
-![Python](https://img.shields.io/badge/python-3.11+-blue)
-![Cost](https://img.shields.io/badge/cost-$0-brightgreen)
+## Live Demo
 
-## 🌐 Live Demo
+Try it here: https://decision-minutes-copilot.onrender.com
 
-**👉 [Try it now: decision-minutes-copilot.onrender.com](https://decision-minutes-copilot.onrender.com)**
+## What it does
 
-*Note: Free tier may take ~30s to wake up on first visit*
+- Upload audio/video files of meetings
+- Transcribes speech to text using Whisper AI
+- Extracts key decisions and action items
+- Shows confidence scores for each item
+- Export results to markdown
 
-## 📸 Screenshots
+## Tech Stack
 
-### Upload Screen
-![Upload](assets/screenshots/01-upload.png)
+- Python / Flask
+- Groq API (Whisper + LLaMA)
+- HTML, CSS, JavaScript
 
-### Processing with Whisper AI
-![Processing](assets/screenshots/02-processing.png)
-
-### AI-Generated Meeting Minutes
-![Results](assets/screenshots/03-results.png)
-
-### Action Items with Confidence Scores
-![Actions](assets/screenshots/04-actions.png)
-
-## 🚀 Features
-
-| Feature | Technology | Cost |
-|---------|------------|------|
-| Audio Upload | Drag & Drop | Free |
-| Speech-to-Text | Groq Whisper | **FREE** |
-| Action Extraction | Groq LLaMA 3.3 70B | **FREE** |
-| Confidence Scoring | AI-generated | Free |
-| Human Confirmation | Built-in | Free |
-| Export to Markdown | Built-in | Free |
-
-## 📊 Performance
-
-| Metric | Value |
-|--------|-------|
-| Transcription Model | Whisper Large v3 |
-| Extraction Model | LLaMA 3.3 70B |
-| Processing Speed | ~10x faster (Groq) |
-| Cost per Request | **$0.00** |
-
-## 🛠️ Setup
+## How to Run Locally
 
 ```bash
 # Clone the repo
@@ -60,40 +34,25 @@ venv\Scripts\activate  # Windows
 # Install dependencies
 pip install -r requirements.txt
 
-# Set up environment (get FREE key from console.groq.com)
+# Set up environment
 copy .env.example .env
-# Add your GROQ_API_KEY to .env
+# Add your GROQ_API_KEY to .env (get free key from console.groq.com)
 
-# Run the app
+# Run
 python -m app.main
 ```
 
-Open http://localhost:5000 and upload a meeting recording!
+Then open http://localhost:5000
 
-## 📁 Project Structure
+## Screenshots
 
-```
-decision-minutes-copilot/
-├── app/
-│   ├── main.py          # Flask entry point
-│   ├── routes.py        # API endpoints
-│   └── services/
-│       ├── transcription.py  # Groq Whisper
-│       └── extraction.py     # Groq LLaMA
-├── static/              # CSS & JS
-├── assets/              # Screenshots & demo
-├── evals/               # Test cases
-└── uploads/             # Temporary storage
-```
+![Upload](assets/screenshots/01-upload.png)
+![Results](assets/screenshots/03-results.png)
 
-## 🔑 Get Your FREE API Key
+## Author
 
-1. Go to https://console.groq.com
-2. Sign up (no credit card required)
-3. Create an API key
-4. Add to `.env` file
+Dewashish
 
-## 📝 License
+## License
 
 MIT
-
